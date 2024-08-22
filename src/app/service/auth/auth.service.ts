@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 const BASIC_URL = "http://localhost:8080/";
 
@@ -9,9 +9,9 @@ const BASIC_URL = "http://localhost:8080/";
 })
 export class AuthService {
 
-  constructor(private http: HttpClient,) { }
+  constructor(private http: HttpClient) { }
 
-  register(signupRequest:any): Observable<any> {
-    return this.http.post(BASIC_URL + "sign-up", signupRequest);
+  register(sigunupRequest:any): Observable<any> {
+    return this.http.post(BASIC_URL + "sign-up", sigunupRequest);
   }
 }

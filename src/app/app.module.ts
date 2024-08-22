@@ -8,7 +8,7 @@ import {SignupComponent} from "./signup/signup.component";
 import {AppComponent} from "./app.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {provideHttpClient} from "@angular/common/http";
+import {HttpClientModule, provideHttpClient} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,6 +24,8 @@ import {provideHttpClient} from "@angular/common/http";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    provideHttpClient(),
+    HttpClientModule
 
   ],
   bootstrap: [AppComponent],
