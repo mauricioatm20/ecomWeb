@@ -9,6 +9,7 @@ import {MatIcon} from "@angular/material/icon";
 import {Router, RouterLink} from "@angular/router";
 import {AuthService} from "../service/auth/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {UserStorageService} from "../service/storage/user-storage.service";
 
 @Component({
   selector: 'app-login',
@@ -64,7 +65,13 @@ export class LoginComponent implements OnInit{
 
     this.authService.login(username, password).subscribe(
 
-      (res) => {this.snackBar.open('Login Suceess','Ok',{duration:5000})},
+      (res) => {
+        if(UserStorageService.isAdminLoggedIn()){
+          this.router.navigateByUrl('admin/dashboard');
+        }else if(UserStorageService.isCustomerLoggedIn()){
+          this.router.navigateByUrl('customer/dashboard');
+        }
+      },
       (error) => {this.snackBar.open('Bad credentials','ERROR',{duration:5000})},
     )
   }
