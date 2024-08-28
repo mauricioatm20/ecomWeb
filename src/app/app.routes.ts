@@ -10,13 +10,8 @@ import {DashboardCComponent} from "./customer/components/dashboard-c/dashboard-c
 export const routes: Routes = [
   {path:"login",component: LoginComponent},
   {path:"signup",component: SignupComponent},
-  {path: '', redirectTo: '/signup', pathMatch: 'full' }, // Redirige a signup por defecto
-  {path: '**', redirectTo: '/signup' }, // Redirige cualquier ruta no encontrada a signup
+  {path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirige a signup por defecto
 
-  {path:'',component:AdminComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path: '', component: CustomerComponent},
-  {path:'dashboar', component: DashboardCComponent}
-  //{path: 'customer', loadChildren:() => import ('./customer/customer.module').then((m) => m.CustomerModule)},
-  //{path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)}
+  { path: 'dashboard', component: DashboardComponent } ,// Ruta hija de admin
+  { path: 'dashboard-c', component: DashboardCComponent } // Ruta hija de customer
 ];
