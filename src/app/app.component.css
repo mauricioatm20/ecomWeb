@@ -23,3 +23,6 @@ button.active{
 .customer-toolbar{
   background-color: #ff0000;
 }
+mat-toolbar{
+  background: cornflowerblue;
+}

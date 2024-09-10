@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit{
         if(UserStorageService.isAdminLoggedIn()){
           this.router.navigateByUrl('dashboard');
         }else if(UserStorageService.isCustomerLoggedIn()){
-          this.router.navigateByUrl('dashboard');
+          this.router.navigateByUrl('dashboard-c');
         }
       },
       (error) => {this.snackBar.open('Bad credentials','ERROR',{duration:5000})},
