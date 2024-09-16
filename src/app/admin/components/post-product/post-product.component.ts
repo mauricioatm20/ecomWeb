@@ -71,5 +71,32 @@ export class PostProductComponent implements OnInit{
       this.listOfCategories = res;
     })
   }
-  addProduct():void{}
+  addProduct(): void{
+    if(this.productForm.valid){
+      const formData: FormData = new FormData();
+      formData.append('img',this.selectedFile);
+      formData.append('CategoryId', this.productForm.get('categoryId').value);
+      formData.append('name', this.productForm.get('name').value);
+      formData.append('description', this.productForm.get('description').value);
+      formData.append('price', this.productForm.get('price').value);
+
+      this.adminService.addProduct(formData).subscribe((res)=>{
+        if(res.id != null){
+          this.snackBar.open('Product Posted Successfully','Close',{
+            duration: 5000,
+          })
+          this.router.navigateByUrl('/dashboard');
+        }else {
+          this.snackBar.open(res.message,'ERROR',{
+            duration: 5000,
+          })
+        }
+      })
+    }else {
+      for(const i in this.productForm.controls){
+        this.productForm.controls[i].markAsDirty();
+        this.productForm.controls[i].updateValueAndValidity();
+      }
+    }
+  }
 }
