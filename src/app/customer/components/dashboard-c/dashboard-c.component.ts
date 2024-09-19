@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";;
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {CustomerService} from "../../services/customer.service";
@@ -29,7 +29,7 @@ import {NgForOf} from "@angular/common";
   templateUrl: './dashboard-c.component.html',
   styleUrl: './dashboard-c.component.scss'
 })
-export class DashboardCComponent {
+export class DashboardCComponent implements OnInit{
   products: any[]= [];
   searchProductForm!: FormGroup;
 
@@ -68,5 +68,9 @@ export class DashboardCComponent {
     })
   }
 
-  addToCart(id:any){}
+  addToCart(id:any){
+    this.customerService.addToCart(id).subscribe(res =>{
+      this.snackBar.open("Product added successfully", "Close",{duration:5000});
+    })
+  }
 }
