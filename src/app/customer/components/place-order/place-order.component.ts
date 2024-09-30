@@ -1,16 +1,32 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {CustomerService} from "../../services/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import { Router} from "@angular/router";
+import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
+import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {MatButton} from "@angular/material/button";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-place-order',
   standalone: true,
-  imports: [],
+  imports: [
+    MatCard,
+    MatCardTitle,
+    MatCardContent,
+    MatFormField,
+    MatLabel,
+    MatError,
+    ReactiveFormsModule,
+    MatInput,
+    MatButton,
+    CommonModule,
+  ],
   templateUrl: './place-order.component.html',
-  styleUrl: './place-order.component.css'
+  styleUrl: './place-order.component.scss'
 })
 export class PlaceOrderComponent implements OnInit {
 

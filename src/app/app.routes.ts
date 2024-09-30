@@ -8,6 +8,8 @@ import {PostProductComponent} from "./admin/components/post-product/post-product
 import {CartComponent} from "./customer/components/cart/cart.component";
 import {PostCouponComponent} from "./admin/components/post-coupon/post-coupon.component";
 import {CouponsComponent} from "./admin/components/coupons/coupons.component";
+import {OrdersComponent} from "./admin/components/orders/orders.component";
+import {PlaceOrderComponent} from "./customer/components/place-order/place-order.component";
 
 
 export const routes: Routes = [
@@ -22,5 +24,7 @@ export const routes: Routes = [
   {path: 'customer/cart', component: CartComponent},
   {path: 'admin/post-coupon', component: PostCouponComponent},
   {path: 'admin/coupons', component: CouponsComponent},
+  {path: 'admin/orders', component: OrdersComponent},
+  {path: 'place-order', component: PlaceOrderComponent},
 
 ];
