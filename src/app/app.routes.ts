@@ -10,6 +10,7 @@ import {PostCouponComponent} from "./admin/components/post-coupon/post-coupon.co
 import {CouponsComponent} from "./admin/components/coupons/coupons.component";
 import {OrdersComponent} from "./admin/components/orders/orders.component";
 import {PlaceOrderComponent} from "./customer/components/place-order/place-order.component";
+import {MyOrdersComponent} from "./customer/components/my-orders/my-orders.component";
 
 
 export const routes: Routes = [
@@ -26,5 +27,6 @@ export const routes: Routes = [
   {path: 'admin/coupons', component: CouponsComponent},
   {path: 'admin/orders', component: OrdersComponent},
   {path: 'place-order', component: PlaceOrderComponent},
+  {path: 'customer/my_orders', component: MyOrdersComponent},
 
 ];

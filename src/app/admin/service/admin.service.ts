@@ -5,6 +5,7 @@ import {UserStorageService} from "../../service/storage/user-storage.service";
 
 
 const BASIC_URL = 'http://localhost:8080/';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -66,6 +67,13 @@ export class AdminService {
       headers: this.createAuthorizationHeader(),
     })
   }
+
+  changeOrderStatus(orderId: number, status: string):Observable<any> {
+    return this.http.get(BASIC_URL + `api/admin/order/${orderId}/${status}`,{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', 'Bearer ' + UserStorageService.getToken())

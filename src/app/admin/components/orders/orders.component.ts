@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminService} from "../../service/admin.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {MatCard, MatCardContent} from "@angular/material/card";
+import {MatCardContent, MatCardModule} from "@angular/material/card";
 import {
   MatCell,
   MatCellDef,
@@ -9,22 +9,25 @@ import {
   MatHeaderCell,
   MatHeaderCellDef,
   MatHeaderRow, MatHeaderRowDef, MatRowDef,
-  MatTable
+  MatTableModule
 } from "@angular/material/table";
 import {MatMenu, MatMenuItem, MatMenuModule} from "@angular/material/menu";
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {RouterLink, RouterModule} from "@angular/router";
+import {MatPrefix} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-orders',
   standalone: true,
   imports: [
-    MatCard,
+    MatCardModule,
     MatCardContent,
-    MatTable,
+    MatTableModule,
     MatCell,
+    MatPrefix,
     MatCellDef,
     MatHeaderCell,
     MatHeaderCellDef,
@@ -40,6 +43,7 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     MatMenuModule,
     MatButtonModule,
+    RouterLink,
   ],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.scss'
@@ -47,6 +51,7 @@ import {CommonModule} from "@angular/common";
 export class OrdersComponent implements OnInit{
 
   orders: any;
+
   constructor(
     private adminService: AdminService,
     private snackBar: MatSnackBar,
@@ -61,5 +66,14 @@ export class OrdersComponent implements OnInit{
       this.orders = res})
   }
 
-  displayedColumns: string[] = ['trackingId', 'userName', 'amount', 'description', 'address', 'date', 'status', 'action'];
+  changeOrderStatus(orderId: number, status:string){
+    this.adminService.changeOrderStatus(orderId, status).subscribe(res => {
+     if(res.id != null){
+       this.snackBar.open("Order Status changed successfully",'Close',{ duration: 5000,})
+       this.getPlaceOrders();
+     } else {
+       this.snackBar.open("Something went wrong", "Close",{ duration: 5000,})
+     }
+    })
+  }
 }

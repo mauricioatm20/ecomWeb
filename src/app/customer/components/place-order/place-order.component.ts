@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {CustomerService} from "../../services/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import { Router} from "@angular/router";
+import {Router, RouterLink, RouterModule} from "@angular/router";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
@@ -24,6 +24,7 @@ import {CommonModule} from "@angular/common";
     MatInput,
     MatButton,
     CommonModule,
+    RouterLink
   ],
   templateUrl: './place-order.component.html',
   styleUrl: './place-order.component.scss'

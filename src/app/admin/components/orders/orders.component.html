@@ -5,38 +5,38 @@
       <table mat-table [dataSource]="orders" class="mat-elevation-z8">
 
         <ng-container matColumnDef="trackingId">
-          <th mat-header-cell *matHeaderCellDef>Traking ID</th>
-          <td mat-cell *matCellDef="let  order">{{order.trackingId}}</td>
+          <th mat-header-cell *matHeaderCellDef>Tracking ID</th>
+          <td mat-cell *matCellDef="let order">{{order.trackingId}}</td>
         </ng-container>
 
         <ng-container matColumnDef="userName">
           <th mat-header-cell *matHeaderCellDef>User Name</th>
-          <td mat-cell *matCellDef="let  order">{{order.userName}}</td>
+          <td mat-cell *matCellDef="let order">{{order.userName}}</td>
         </ng-container>
 
         <ng-container matColumnDef="amount">
           <th mat-header-cell *matHeaderCellDef>Amount</th>
-          <td mat-cell *matCellDef="let  order" class="bold-cell">{{order.amount}}</td>
+          <td mat-cell *matCellDef="let order" class="bold-cell">{{order.amount}}</td>
         </ng-container>
 
         <ng-container matColumnDef="description">
           <th mat-header-cell *matHeaderCellDef>Description</th>
-          <td mat-cell *matCellDef="let  order">{{order.orderDescription}}</td>
+          <td mat-cell *matCellDef="let order">{{order.orderDescription}}</td>
         </ng-container>
 
         <ng-container matColumnDef="address">
           <th mat-header-cell *matHeaderCellDef>Address</th>
-          <td mat-cell *matCellDef="let  order">{{order.address}}</td>
+          <td mat-cell *matCellDef="let order">{{order.address}}</td>
         </ng-container>
 
         <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef>Date</th>
-          <td mat-cell *matCellDef="let  order">{{order.date | date: 'dd/MM/yyyy' }}</td>
+          <td mat-cell *matCellDef="let order">{{order.date | date: 'dd/MM/yyyy' }}</td>
         </ng-container>
 
         <ng-container matColumnDef="status">
           <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let  order">{{order.satus}}</td>
+          <td mat-cell *matCellDef="let order">{{order.orderStatus}}</td>
         </ng-container>
 
         <ng-container matColumnDef="action">
@@ -46,10 +46,11 @@
             <mat-menu #menu="matMenu">
               <span>
                 <span>
-                  <button mat-menu-item>Shipped</button>
+                  <button mat-menu-item (click)="changeOrderStatus(order.id, 'Shipped')">Shipped</button>
                 </span>
+
                 <span>
-                  <button mat-menu-item>Delivered</button>
+                  <button mat-menu-item (click)="changeOrderStatus(order.id, 'Delivered')">Delivered</button>
                 </span>
               </span>
             </mat-menu>
