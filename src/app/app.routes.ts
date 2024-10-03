@@ -11,6 +11,7 @@ import {CouponsComponent} from "./admin/components/coupons/coupons.component";
 import {OrdersComponent} from "./admin/components/orders/orders.component";
 import {PlaceOrderComponent} from "./customer/components/place-order/place-order.component";
 import {MyOrdersComponent} from "./customer/components/my-orders/my-orders.component";
+import {PostProductFaqComponent} from "./admin/components/post-product-faq/post-product-faq.component";
 
 
 export const routes: Routes = [
@@ -28,5 +29,6 @@ export const routes: Routes = [
   {path: 'admin/orders', component: OrdersComponent},
   {path: 'place-order', component: PlaceOrderComponent},
   {path: 'customer/my_orders', component: MyOrdersComponent},
+  {path: 'admin/faq/:productId', component: PostProductFaqComponent}
 
 ];

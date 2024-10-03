@@ -16,7 +16,7 @@ import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {RouterLink, RouterModule} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {MatPrefix} from "@angular/material/form-field";
 
 @Component({
