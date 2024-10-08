@@ -12,6 +12,7 @@ import {
 import {RouterLink} from "@angular/router";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {DatePipe} from "@angular/common";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-my-orders',
@@ -26,7 +27,8 @@ import {DatePipe} from "@angular/common";
     MatHeaderRow,
     MatRow,
     RouterLink,
-    DatePipe
+    DatePipe,
+    MatButton
   ],
   templateUrl: './my-orders.component.html',
   styleUrl: './my-orders.component.scss'

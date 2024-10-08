@@ -32,8 +32,20 @@ export class AdminService {
     })
   }
 
+  updateProduct(productId:any, productDto:any):Observable<any> {
+    return this.http.put(BASIC_URL + `api/admin/product/${productId}` ,productDto,{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   getAllProducts():Observable<any> {
     return this.http.get(BASIC_URL + 'api/admin/products',{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  getProductById(productId):Observable<any> {
+    return this.http.get(BASIC_URL + `api/admin/product/${productId}`,{
       headers: this.createAuthorizationHeader(),
     })
   }
@@ -83,4 +95,6 @@ export class AdminService {
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', 'Bearer ' + UserStorageService.getToken())
   }
+
+
 }
