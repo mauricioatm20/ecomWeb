@@ -49,7 +49,7 @@ export class PostCategoryComponent implements OnInit{
            this.snackBar.open('Category Posted Successfully','Close',{
              duration: 5000,
            });
-           this.router.navigateByUrl('/admin/dashboard');
+           this.categoryForm.reset();
          }else{
            this.snackBar.open(res.message,'Close',{
              duration: 5000,

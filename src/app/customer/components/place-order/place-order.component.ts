@@ -50,11 +50,11 @@ export class PlaceOrderComponent implements OnInit {
   placeOrder(){
     this.customerService.placeOrder(this.orderForm.value).subscribe(res => {
       if(res.id != null){
-        this.snackBar.open("Order placed successfull", "Close", {duration: 5000});
-        this.router.navigateByUrl("customer/my-orders");
+        this.snackBar.open("Order placed successfull", "Close", {duration: 5000})
+        this.router.navigateByUrl("/customer/my-orders");
         this.closeForm();
       }else {
-        this.snackBar.open("Something went wrong", "Close", {duration: 5000});
+        this.snackBar.open("Something went wrong", "Close", {duration: 5000})
       }
     })
   }

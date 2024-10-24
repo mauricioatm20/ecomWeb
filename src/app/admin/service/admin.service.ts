@@ -75,10 +75,17 @@ export class AdminService {
   }
 
   getPlaceOrders():Observable<any> {
-    return this.http.get(BASIC_URL + 'api/admin/placeOrders',{
+    return this.http.get(BASIC_URL + 'api/admin/placedOrders',{
       headers: this.createAuthorizationHeader(),
     })
   }
+
+  getAnalytics():Observable<any> {
+    return this.http.get(BASIC_URL + 'api/admin/order/analytics',{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
 
   changeOrderStatus(orderId: number, status: string):Observable<any> {
     return this.http.get(BASIC_URL + `api/admin/order/${orderId}/${status}`,{

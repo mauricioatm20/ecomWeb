@@ -16,25 +16,39 @@ import {UpdateProductComponent} from "./admin/components/update-product/update-p
 import {
   ViewOrderedProductsComponent
 } from "./customer/components/view-ordered-products/view-ordered-products.component";
+import {
+  ReviewOrderedProductComponent
+} from "./customer/components/review-ordered-product/review-ordered-product.component";
+import {ViewProductDetailComponent} from "./customer/components/view-product-detail/view-product-detail.component";
+import {ViewWishlistComponent} from "./customer/components/view-wishlist/view-wishlist.component";
+import {TrackOrderComponent} from "./track-order/track-order.component";
+import {AnalitycsComponent} from "./admin/components/analytics/analitycs.component";
 
 
 export const routes: Routes = [
   {path:"login",component: LoginComponent},
   {path:"signup",component: SignupComponent},
+  {path:'order', component: TrackOrderComponent},
+
   {path: '', redirectTo: '/login', pathMatch: 'full' },// Redirige  por defecto
 
   {path: 'dashboard', component: DashboardComponent } ,// Ruta admin
-  {path: 'dashboard-c', component: DashboardCComponent }, // Ruta customer
   {path: 'admin/category', component: PostCategoryComponent},
   {path: 'admin/product', component: PostProductComponent},
-  {path: 'customer/cart', component: CartComponent},
+  {path: 'admin/analytics', component:AnalitycsComponent},
   {path: 'admin/post-coupon', component: PostCouponComponent},
   {path: 'admin/coupons', component: CouponsComponent},
   {path: 'admin/orders', component: OrdersComponent},
-  {path: 'place-order', component: PlaceOrderComponent},
-  {path: 'customer/my_orders', component: MyOrdersComponent},
   {path: 'admin/faq/:productId', component: PostProductFaqComponent},
   {path: 'admin/product/:productId', component: UpdateProductComponent},
+
+  {path: 'dashboard-c', component: DashboardCComponent }, // Ruta customer
+  {path: 'customer/cart', component: CartComponent},
+  {path: 'customer/placeOrder', component: PlaceOrderComponent},
+  {path: 'customer/my_orders', component: MyOrdersComponent},
   {path: 'customer/ordered_products/:orderId', component: ViewOrderedProductsComponent},
+  {path: 'customer/review/:productId', component: ReviewOrderedProductComponent},
+  {path: 'customer/product/:productId', component: ViewProductDetailComponent},
+  {path: 'customer/wishlist', component: ViewWishlistComponent}
 
 ];

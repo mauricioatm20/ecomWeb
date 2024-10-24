@@ -9,6 +9,7 @@ import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import {NgForOf} from "@angular/common";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard-c',
@@ -24,7 +25,8 @@ import {NgForOf} from "@angular/common";
     MatLabel,
     MatSuffix,
     NgForOf,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './dashboard-c.component.html',
   styleUrl: './dashboard-c.component.scss'

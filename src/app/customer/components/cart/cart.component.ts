@@ -8,7 +8,8 @@ import {MatIcon} from "@angular/material/icon";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {PlaceOrderComponent} from "../place-order/place-order.component";
+import { PlaceOrderComponent } from '../place-order/place-order.component';
+
 
 @Component({
   selector: 'app-cart',

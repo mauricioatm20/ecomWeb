@@ -9,9 +9,9 @@ import {
   MatHeaderRow, MatRow,
   MatTableModule
 } from "@angular/material/table";
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterModule} from "@angular/router";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {DatePipe} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
 import {MatButton} from "@angular/material/button";
 
 @Component({
@@ -27,8 +27,10 @@ import {MatButton} from "@angular/material/button";
     MatHeaderRow,
     MatRow,
     RouterLink,
+    RouterModule,
     DatePipe,
-    MatButton
+    MatButton,
+    CommonModule
   ],
   templateUrl: './my-orders.component.html',
   styleUrl: './my-orders.component.scss'

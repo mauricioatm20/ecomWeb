@@ -101,8 +101,7 @@ export class UpdateProductComponent implements OnInit{
         formData.append('img', this.selectedFile);
       }
 
-      formData.append('img',this.selectedFile);
-      formData.append('CategoryId', this.productForm.get('categoryId').value);
+      formData.append('categoryId', this.productForm.get('categoryId').value);
       formData.append('name', this.productForm.get('name').value);
       formData.append('description', this.productForm.get('description').value);
       formData.append('price', this.productForm.get('price').value);

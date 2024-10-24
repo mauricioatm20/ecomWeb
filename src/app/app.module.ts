@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import {DemoAngularMaterialModule} from "./DemoAngularMaterialModule";
+// @ts-ignore
 import { AppRoutingModule } from './app-routing.module';
 import {LoginComponent} from "./login/login.component";
 import {BrowserModule} from "@angular/platform-browser";
