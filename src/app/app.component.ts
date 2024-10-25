@@ -15,7 +15,7 @@ import {MatMenu} from "@angular/material/menu";
   standalone: true,
   imports: [RouterOutlet, CommonModule, MatToolbar, MatButton, RouterLink, RouterLinkActive, LoginComponent, SignupComponent, MatMenu],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
   title = 'ECommerceWeb';
