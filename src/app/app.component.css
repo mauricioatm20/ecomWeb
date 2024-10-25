@@ -1,28 +1,63 @@
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   padding: 0 16px;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 20px;
   font-weight: 600;
   margin-right: 16px;
 }
-.spacer{
+
+.spacer {
   flex: 1;
 }
-button{
+
+button {
   color: white;
   text-transform: uppercase;
   margin-left: 8px;
 }
-button.active{
+
+button.active {
   font-weight: 600;
 }
-.customer-toolbar{
+
+.customer-toolbar {
   background-color: #ff0000;
 }
-mat-toolbar{
+
+mat-toolbar {
   background: cornflowerblue;
+}
+
+/* Estilos del menú desplegable */
+mat-menu {
+  min-width: 200px;
+}
+
+mat-menu button {
+  width: 100%;
+}
+
+mat-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .navbar button:not([mat-menu-trigger]) {
+    display: none;
+  }
+
+  .navbar .menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 601px) {
+  .navbar .menu-button {
+    display: none;
+  }
 }

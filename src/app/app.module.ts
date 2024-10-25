@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {provideHttpClient} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     FormsModule,
     ReactiveFormsModule,
     provideHttpClient(),
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
 
   ],
   bootstrap: [AppComponent],
