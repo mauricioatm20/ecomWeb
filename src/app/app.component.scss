@@ -3,43 +3,35 @@
   align-items: center;
   padding: 0 16px;
 
-  .menu-button {
-    display: none; // Ocultar por defecto
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+  }
 
-    @media (max-width: 600px) {
-      display: block; // Mostrar solo en pantallas pequeñas
+  .spacer {
+    flex: 1;
+  }
+
+  .menu-buttons {
+    display: flex;
+    gap: 8px;
+
+    button {
+      color: white;
+      text-transform: uppercase;
+      font-size: 14px;
     }
   }
-}
 
-.navbar-brand {
-  font-size: 20px;
-  font-weight: 600;
-  margin-right: 16px;
-}
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .menu-buttons {
+      display: none; /* Ocultar botones en pantallas pequeñas */
+    }
 
-.spacer {
-  flex: 1;
-}
-
-button {
-  color: white;
-  text-transform: uppercase;
-  margin-left: 8px;
-
-  @media (max-width: 600px) {
-    display: none; // Ocultar botones en pantallas pequeñas
+    .menu-button {
+      display: block; /* Mostrar ícono hamburguesa */
+    }
   }
-}
-
-button.active {
-  font-weight: 600;
-}
-
-.customer-toolbar {
-  background-color: #ff0000;
-}
-
-mat-toolbar {
-  background: cornflowerblue;
 }
