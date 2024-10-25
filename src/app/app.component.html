@@ -5,12 +5,7 @@
     <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
     <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
     <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
-    <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/order" routerLinkActive="active">Track Order</button>
-      <button mat-menu-item routerLink="/signup" routerLinkActive="active">Register</button>
-      <button mat-menu-item routerLink="/login" routerLinkActive="active">Login</button>
-    </mat-menu>
+
   </mat-toolbar>
 </div>
 
@@ -18,17 +13,15 @@
   <mat-toolbar color="primary" class="navbar">
     <span class="navbar-brand">E-Comerce</span>
     <span class="spacer"></span>
-    <button mat-button [matMenuTriggerFor]="adminMenu" class="menu-button">Menu</button>
-    <mat-menu #adminMenu="matMenu">
-      <button mat-menu-item routerLink="/dashboard" routerLinkActive="active">Dashboard</button>
-      <button mat-menu-item routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
-      <button mat-menu-item routerLink="/admin/category" routerLinkActive="active">Category</button>
-      <button mat-menu-item routerLink="/admin/product" routerLinkActive="active">Product</button>
-      <button mat-menu-item routerLink="/admin/orders" routerLinkActive="active">Orders</button>
-      <button mat-menu-item routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupon</button>
-      <button mat-menu-item routerLink="/admin/coupons" routerLinkActive="active">Coupons</button>
-      <button mat-menu-item (click)="logOut()">Logout</button>
-    </mat-menu>
+    <button mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
+    <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
+    <button mat-button routerLink="/admin/product" routerLinkActive="active">Product</button>
+    <button mat-button routerLink="/admin/orders" routerLinkActive="active">Orders</button>
+    <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupon</button>
+    <button mat-button routerLink="/admin/coupons" routerLinkActive="active">Coupons</button>
+    <button mat-button routerLinkActive="active" (click)="logOut()">Logout</button>
+
   </mat-toolbar>
 </div>
 
@@ -36,15 +29,13 @@
   <mat-toolbar color="primary" class="navbar">
     <span class="navbar-brand">E-Comerce</span>
     <span class="spacer"></span>
-    <button mat-button [matMenuTriggerFor]="customerMenu" class="menu-button">Menu</button>
-    <mat-menu #customerMenu="matMenu">
-      <button mat-menu-item routerLink="/dashboard-c" routerLinkActive="active">Dashboard</button>
-      <button mat-menu-item routerLink="/customer/cart" routerLinkActive="active">Cart</button>
-      <button mat-menu-item routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>
-      <button mat-menu-item routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
-      <button mat-menu-item routerLink="/customer/profile" routerLinkActive="active">Profile</button>
-      <button mat-menu-item (click)="logOut()">Logout</button>
-    </mat-menu>
+    <button mat-button routerLink="/dashboard-c" routerLinkActive="active">Dashboard</button>
+    <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
+    <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>
+    <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
+    <button mat-button routerLink="/customer/profile" routerLinkActive="active">Profile</button>
+    <button mat-button routerLinkActive="active" (click)="logOut()">Logout</button>
+
   </mat-toolbar>
 </div>
 

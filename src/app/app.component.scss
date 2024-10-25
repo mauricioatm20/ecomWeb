@@ -1,37 +1,40 @@
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 16px;
+}
 
-  .navbar-brand {
-    font-size: 20px;
-    font-weight: 600;
-    margin-right: 16px;
-  }
+/* Estilo del logo */
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 600;
+}
 
-  .spacer {
-    flex: 1;
-  }
+/* Oculta los botones de navegación y muestra el menú hamburguesa solo en pantallas pequeñas */
+.menu-buttons {
+  display: flex;
+}
 
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Oculta los botones normales */
   .menu-buttons {
-    display: flex;
-    gap: 8px;
-
-    button {
-      color: white;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
+    display: none;
   }
 
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .menu-buttons {
-      display: none; /* Ocultar botones en pantallas pequeñas */
-    }
-
-    .menu-button {
-      display: block; /* Mostrar ícono hamburguesa */
-    }
+  /* Muestra el menú hamburguesa */
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 16px;
   }
 }
