@@ -4,7 +4,7 @@ import {map, Observable} from "rxjs";
 import {UserStorageService} from "../storage/user-storage.service";
 
 //const BASIC_URL = "http://localhost:8080/";
-const BASIC_URL = "courteous-fulfillment-production.up.railway.app";
+const BASIC_URL = "https://courteous-fulfillment-production.up.railway.app/";
 
 @Injectable({
   providedIn: 'root'
