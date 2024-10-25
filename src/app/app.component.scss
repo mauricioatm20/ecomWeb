@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  .menu-button {
+    display: none; // Ocultar por defecto
+
+    @media (max-width: 600px) {
+      display: block; // Mostrar solo en pantallas pequeñas
+    }
+  }
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button {
+  color: white;
+  text-transform: uppercase;
+  margin-left: 8px;
+
+  @media (max-width: 600px) {
+    display: none; // Ocultar botones en pantallas pequeñas
+  }
+}
+
+button.active {
+  font-weight: 600;
+}
+
+.customer-toolbar {
+  background-color: #ff0000;
+}
+
+mat-toolbar {
+  background: cornflowerblue;
+}

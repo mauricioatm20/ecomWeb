@@ -6,15 +6,16 @@ import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {UserStorageService} from "./service/storage/user-storage.service";
 import {CommonModule} from "@angular/common";
+import {MatMenu} from "@angular/material/menu";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MatToolbar, MatButton, RouterLink, RouterLinkActive, LoginComponent, SignupComponent],
+  imports: [RouterOutlet, CommonModule, MatToolbar, MatButton, RouterLink, RouterLinkActive, LoginComponent, SignupComponent, MatMenu],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
   title = 'ECommerceWeb';
