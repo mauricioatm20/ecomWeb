@@ -1,45 +1,88 @@
-.order-status-container{
+.order-status-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
   margin-bottom: 20px;
 }
 
-.order-status-card{
-  width: 32%;
+.order-status-card {
+  width: calc(33.33% - 20px); /* Ancho calculado para 3 elementos por fila */
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  margin-right: 20px;
+  margin-bottom: 20px; /* Margen inferior para espacio entre filas */
+  padding: 15px; /* Agregar padding interno para mejor apariencia */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  overflow: hidden; /* Ocultar cualquier contenido que desborde */
+
+  // Responsive Design
+  @media (max-width: 800px) {
+    width: calc(50% - 10px); /* Dos elementos por fila */
+  }
+
+  @media (max-width: 600px) {
+    width: 100%; /* Un elemento por fila */
+  }
 }
 
-.order-status-card:last-child{
-  margin-right: 0;
-}
-
-.order-status-card:hover{
+.order-status-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
-.status.avatar{
-  background-color: #007bff;
-  color: #ffffff;
-  font-size: 32px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+.status.avatar {
+  background-color: #007bff; /* Color de fondo */
+  color: #ffffff; /* Color de la letra */
+  font-size: 15px; /* Tamaño de la letra */
+  border-radius: 50%; /* Esquinas redondeadas */
+  width: 60px; /* Ancho del avatar */
+  height: 60px; /* Alto del avatar */
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
 }
 
-.mat-card-title{
+.avatar-letter {
+  font-weight: bold; /* Resaltar letra */
+  font-size: 1.5em; /* Aumentar el tamaño de la letra */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
+
+.avatar-letter {
+  font-weight: bold; /* Resaltar letra */
+  font-size: 1.5em; /* Aumentar el tamaño de la letra */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
+
+.mat-card-title {
   font-weight: bold;
   font-size: 20px;
   color: #333333;
+  overflow: hidden; /* Ocultar texto que se desborda */
+  text-overflow: ellipsis; /* Puntos suspensivos si hay desbordamiento */
+  white-space: nowrap; /* Evitar que el texto se envuelva */
 }
 
-.status-value{
+.status-value {
   font-size: 36px;
   color: #007bff;
   font-weight: bold;
   margin-top: 10px;
+  white-space: nowrap; /* Mantener en una línea */
+  overflow: visible; /* Asegurar que el valor sea visible */
+  text-overflow: clip; /* No mostrar puntos suspensivos */
+}
+
+.metric-value {
+  font-size: 36px;
+  color: #007bff;
+  font-weight: bold;
+  margin-top: 10px;
+  white-space: nowrap; /* Mantener el número en una línea */
+  overflow: visible; /* Asegurar que el valor sea visible */
+  text-overflow: clip; /* No mostrar puntos suspensivos */
+}
+
+.metric-subtext {
+  font-size: 14px; /* Tamaño más pequeño para el subtítulo */
+  color: #666; /* Color gris para el subtítulo */
 }

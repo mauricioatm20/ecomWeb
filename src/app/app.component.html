@@ -1,4 +1,4 @@
-<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn" xmlns:cursor="http://www.w3.org/1999/xhtml">
   <mat-toolbar color="primary" class="navbar">
     <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
@@ -47,7 +47,7 @@
            routerLinkActive="active">{{ item.label }}</a>
       </li>
       <li>
-        <a class="dropdown-item" (click)="logOut()">Logout</a>
+        <a class="dropdown-item" (click)="logOut()" style="cursor: pointer;">Logout</a>
       </li>
     </ul>
 
@@ -56,7 +56,8 @@
       <ng-container *ngFor="let item of adminMenuItems">
         <button mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</button>
       </ng-container>
-      <button mat-button routerLinkActive="active" (click)="logOut()">Logout</button>
+      <!-- Logout button for desktop view -->
+      <button mat-button routerLinkActive="active" (click)="logOut()" style="cursor: pointer;">Logout</button>
     </div>
   </mat-toolbar>
 </div>
@@ -88,7 +89,7 @@
         <a class="dropdown-item" *ngIf="item.link" [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</a>
       </li>
       <li>
-        <a class="dropdown-item" (click)="logOut()">Logout</a>
+        <a class="dropdown-item" (click)="logOut()" style="cursor: pointer;">Logout</a>
       </li>
     </ul>
 
@@ -98,7 +99,7 @@
         <button mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</button>
       </ng-container>
       <!-- Logout button for desktop view -->
-      <button mat-button routerLinkActive="active" (click)="logOut()">Logout</button>
+      <button mat-button routerLinkActive="active" (click)="logOut()" style="cursor: pointer;">Logout</button>
     </div>
   </mat-toolbar>
 </div>
