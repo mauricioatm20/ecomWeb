@@ -56,6 +56,13 @@ export class CustomerService {
     })
   }
 
+  removeProductFromCart(productId: any): Observable<any> {
+    const userId = UserStorageService.getUserId(); // Obtener el ID del usuario
+    return this.http.delete(`${BASIC_URL}api/customer/cart/${userId}/product/${productId}`, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
   placeOrder(orderDto:any):Observable<any> {
    orderDto.userId = UserStorageService.getUserId()
     return this.http.post(BASIC_URL + 'api/customer/placeOrder', orderDto ,{

@@ -4,19 +4,27 @@
   padding: 20px;
 }
 
-.product-card{
+.product-card {
   background-color: #f0f0f0;
   border: 1px solid #cccccc;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-}
+  overflow: hidden; // Evita que el contenido sobresalga del card
 
-.product-card .preview-image img{
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  .preview-image {
+    height: 200px; // Altura estándar para pantallas grandes
+    overflow: hidden; // Asegúrate de ocultar cualquier desbordamiento
+    border-radius: 8px; // Redondeo de las esquinas de la imagen
+
+    img {
+      width: 100%; // Asegura que la imagen ocupe todo el ancho del contenedor
+      height: auto; // Mantiene la proporción de la imagen
+      object-fit: contain; // Ajusta la imagen para cubrir el contenedor sin distorsionarse
+      align-items: center;
+    }
+  }
 }
 
 .product-card h2{
@@ -147,4 +155,14 @@
 .faq-card .question-text,
 .faq-card .answer-text{
   margin-left: 20px;
+}
+// Estilos Responsivos
+@media (max-width: 768px) {
+  .product-card {
+    padding: 15px; // Menos padding en pantallas pequeñas
+
+    .preview-image {
+      height: 150px; // Altura ajustada para pantallas pequeñas
+    }
+  }
 }

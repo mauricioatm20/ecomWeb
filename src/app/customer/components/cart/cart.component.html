@@ -21,6 +21,11 @@
                 <mat-icon>add_circle_outline</mat-icon>
               </button>
 
+              <!-- Botón de eliminar producto -->
+              <button mat-icon-button (click)="removeFromCart(item.productId)" aria-label="Eliminar producto">
+                <mat-icon>delete</mat-icon>
+              </button>
+
             </div>
           </div>
         </div>

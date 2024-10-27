@@ -86,6 +86,15 @@ export class CartComponent implements OnInit{
     })
   }
 
+  removeFromCart(productId: any) {
+    this.customerService.removeProductFromCart(productId).subscribe(res => {
+      this.snackBar.open('Product Removed from Cart', 'Close', { duration: 5000 });
+      this.getCart(); // Actualiza el carrito después de eliminar el producto
+    }, error => {
+      this.snackBar.open('Error removing product', 'Close', { duration: 5000 });
+    });
+  }
+
   placeOrder(){
     this.dialog.open(PlaceOrderComponent);
   }
