@@ -1,37 +1,57 @@
 <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-Comerce</span>
+    <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
-    <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
-    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
 
+    <ng-container *ngIf="isSmallScreen(); else desktopMenu">
+      <!-- Menú hamburguesa -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-left: auto;">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/order" routerLinkActive="active">Track Order</button>
+        <button mat-menu-item routerLink="/signup" routerLinkActive="active">Register</button>
+        <button mat-menu-item routerLink="/login" routerLinkActive="active">Login</button>
+      </mat-menu>
+    </ng-container>
+
+    <ng-template #desktopMenu>
+      <!-- Menú de escritorio -->
+      <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
+      <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+      <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+    </ng-template>
   </mat-toolbar>
 </div>
 
+<!-- Admin Section -->
 <div *ngIf="isAdminLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-Comerce</span>
+    <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
 
-    <!-- Botón del menú hamburguesa, visible solo en pantallas pequeñas -->
-    <button mat-icon-button [matMenuTriggerFor]="adminMenu" class="menu-button" *ngIf="isSmallScreen()">
-      <mat-icon>menu</mat-icon>
+    <!-- Botón de menú hamburguesa -->
+    <button
+      type="button"
+      class="btn dropdown-toggle menu-button"
+      *ngIf="isSmallScreen()"
+      data-bs-toggle="dropdown"
+      aria-expanded="false">
+      <i class="bi bi-list"></i> <!-- Ícono de hamburguesa de Bootstrap -->
     </button>
 
     <!-- Menú desplegable -->
-    <mat-menu #adminMenu="matMenu">
-      <ng-container *ngFor="let item of adminMenuItems">
-        <button mat-menu-item *ngIf="item.link; else actionTemplate" [routerLink]="item.link" routerLinkActive="active">
-          {{ item.label }}
-        </button>
-        <ng-template #actionTemplate>
-          <button mat-menu-item (click)="item.action()">{{ item.label }}</button>
-        </ng-template>
-      </ng-container>
-    </mat-menu>
+    <ul class="dropdown-menu dropdown-menu-end" *ngIf="isSmallScreen()">
+      <li *ngFor="let item of adminMenuItems">
+        <a class="dropdown-item" *ngIf="item.link" [routerLink]="item.link"
+           routerLinkActive="active">{{ item.label }}</a>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="logOut()">Logout</a>
+      </li>
+    </ul>
 
-    <!-- Menú de escritorio visible solo en pantallas grandes -->
+    <!-- Menú de escritorio -->
     <div class="desktop-menu" *ngIf="!isSmallScreen()">
       <ng-container *ngFor="let item of adminMenuItems">
         <button mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</button>
@@ -41,33 +61,43 @@
   </mat-toolbar>
 </div>
 
+
+
+
+
+
+
 <div *ngIf="isCustomerLoggedIn">
   <mat-toolbar color="primary" class="navbar">
-    <span class="navbar-brand">E-Comerce</span>
+    <span class="navbar-brand">E-Commerce</span>
     <span class="spacer"></span>
 
-    <!-- Botón del menú hamburguesa, visible solo en pantallas pequeñas -->
-    <button mat-icon-button [matMenuTriggerFor]="customerMenu" class="menu-button" *ngIf="isSmallScreenC()">
+    <!-- Bootstrap Dropdown Toggle Button for Small Screens -->
+    <button
+      type="button"
+      class="btn dropdown-toggle menu-button"
+      *ngIf="isSmallScreenC()"
+      data-bs-toggle="dropdown"
+      aria-expanded="false">
       <mat-icon>menu</mat-icon>
     </button>
 
-    <!-- Menú desplegable -->
-    <mat-menu #customerMenu="matMenu">
-      <ng-container *ngFor="let item of customerMenuItems">
-        <button mat-menu-item *ngIf="item.link; else actionTemplate" [routerLink]="item.link" routerLinkActive="active">
-          {{ item.label }}
-        </button>
-        <ng-template #actionTemplate>
-          <button mat-menu-item (click)="item.action()">{{ item.label }}</button>
-        </ng-template>
-      </ng-container>
-    </mat-menu>
+    <!-- Bootstrap Dropdown Menu for Small Screens -->
+    <ul class="dropdown-menu dropdown-menu-end" *ngIf="isSmallScreenC()">
+      <li *ngFor="let item of customerMenuItems">
+        <a class="dropdown-item" *ngIf="item.link" [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</a>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="logOut()">Logout</a>
+      </li>
+    </ul>
 
-    <!-- Menú de escritorio visible solo en pantallas grandes -->
+    <!-- Desktop Menu for Larger Screens -->
     <div class="desktop-menu" *ngIf="!isSmallScreenC()">
       <ng-container *ngFor="let item of customerMenuItems">
         <button mat-button [routerLink]="item.link" routerLinkActive="active">{{ item.label }}</button>
       </ng-container>
+      <!-- Logout button for desktop view -->
       <button mat-button routerLinkActive="active" (click)="logOut()">Logout</button>
     </div>
   </mat-toolbar>

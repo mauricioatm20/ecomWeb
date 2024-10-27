@@ -1,0 +1,136 @@
+// Variables
+$primary-color: #003366; // Azul oscuro para la barra de navegación
+$hover-button-color: #00509E; // Azul más oscuro al pasar el mouse
+$active-button-color: #004080; // Color del botón seleccionado
+$dropdown-bg-color: #ffffff; // Fondo para los elementos del menú desplegable
+$dropdown-item-hover-bg: #f1f1f1; // Fondo al pasar el mouse por los elementos del menú
+$navbar-height: 60px; // Altura de la barra de navegación
+
+body {
+  font-family: 'Arial', sans-serif; // Fuente limpia y moderna
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; // Fondo gris claro para contraste
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: $primary-color; // Fondo azul oscuro para la barra de navegación
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra sutil para profundidad
+  height: $navbar-height; // Establecer la altura de la barra de navegación
+
+  .navbar-brand {
+    font-size: 24px; // Tamaño de fuente más grande para la marca
+    font-weight: 700; // Marca en negrita
+    color: white; // Texto blanco para contraste
+    margin-right: 16px;
+  }
+
+  .spacer {
+    flex: 1; // Empuja los botones hacia la derecha
+  }
+
+  // Estilos para el menú desplegable
+  .dropdown-menu {
+    background-color: $dropdown-bg-color; // Fondo blanco para el menú desplegable
+    border: 1px solid #ddd; // Borde claro alrededor del menú desplegable
+    border-radius: 4px; // Esquinas redondeadas
+    margin-top: 0; // Elimina el espaciado extra
+
+    .dropdown-item {
+      color: #333; // Gris oscuro para el texto de los elementos
+      padding: 10px 15px; // Relleno para el área clickeable
+      text-decoration: none; // Elimina subrayado
+      transition: background-color 0.3s; // Transición suave para el color de fondo
+
+      &:hover {
+        background-color: $dropdown-item-hover-bg; // Gris claro al pasar el mouse
+      }
+
+      // Estilo para el botón seleccionado
+      &.active {
+        background-color: $active-button-color; // Color del botón activo
+        color: white; // Color del texto en el botón activo
+      }
+    }
+  }
+
+  // Menú hamburguesa
+  .mat-icon-button {
+    color: white; // Color del icono del menú
+    transition: background-color 0.3s; // Transición suave para el hover
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1); // Fondo ligero al pasar el cursor
+    }
+  }
+
+  button {
+    color: white; // Texto blanco para los botones
+    text-transform: uppercase; // Letras en mayúscula para los botones
+    margin-left: 8px;
+    border: none; // Elimina el borde
+    transition: background-color 0.3s; // Transición suave para el hover
+
+    &:hover {
+      background-color: $hover-button-color; // Azul más oscuro al pasar el mouse
+    }
+  }
+}
+
+// Estilos para el menú desplegable
+.dropdown-menu {
+  background-color: $dropdown-bg-color; // Fondo blanco para el menú desplegable
+  border: 1px solid #ddd; // Borde claro alrededor del menú
+  border-radius: 4px; // Esquinas redondeadas
+  margin-top: 0; // Elimina el espaciado extra
+
+  .dropdown-item {
+    color: #333; // Gris oscuro para el texto de los elementos
+    padding: 10px 15px; // Relleno para el área clickeable
+    text-decoration: none; // Elimina subrayado
+
+    &:hover {
+      background-color: $dropdown-item-hover-bg; // Gris claro al pasar el mouse
+    }
+  }
+}
+
+// Estilos Responsivos
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; // Apila los elementos verticalmente en pantallas pequeñas
+    align-items: flex-start; // Alinea los elementos al inicio
+
+    .menu-button {
+      margin-top: 8px;
+      margin-left: auto; // Alinea el botón a la derecha
+      display: flex; // Asegura que el botón se muestre
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-menu {
+    display: flex; // Usa flex para pantallas más grandes
+    align-items: center; // Centra los elementos verticalmente
+  }
+}
+
+// Estilos para mat-toolbar y mat-menu
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between; // Espaciado entre los elementos
+
+  .mat-icon-button {
+    color: white; // Establece el color del botón de ícono en blanco
+    margin-left: auto; // Alinea el botón de ícono a la derecha
+  }
+}
+
+.mat-menu {
+  background-color: $dropdown-bg-color; // Color de fondo para el menú desplegable
+  border: 1px solid #ddd; // Borde claro alrededor del menú desplegable
+}

@@ -16,7 +16,7 @@ import {MatIcon} from "@angular/material/icon";
   standalone: true,
   imports: [RouterOutlet, CommonModule, MatToolbar, MatButton, RouterLink, RouterLinkActive, LoginComponent, SignupComponent, MatMenuModule, MatIcon, MatIconButton],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
   title = 'ECommerceWeb';
@@ -38,6 +38,11 @@ export class AppComponent implements OnInit{
     this.router.navigateByUrl('login')
   }
 
+  isCustomerLoggedInisAdminLoggedIn=[
+
+  ];
+
+
   // Elementos del menú
   adminMenuItems = [
     { label: 'Dashboard', link: '/dashboard' },
@@ -47,7 +52,7 @@ export class AppComponent implements OnInit{
     { label: 'Orders', link: '/admin/orders' },
     { label: 'Post Coupon', link: '/admin/post-coupon' },
     { label: 'Coupons', link: '/admin/coupons' },
-    { label: 'Logout', action: () => this.logOut() }, // Agrega este elemento
+
   ];
 
   // Define el umbral para pantallas pequeñas
@@ -64,13 +69,14 @@ export class AppComponent implements OnInit{
     // Esto ayudará a actualizar la UI de acuerdo al tamaño
   }
 
+
   // Elementos del menú para clientes
   customerMenuItems = [
     { label: 'Dashboard', link: '/dashboard-c' },
     { label: 'Cart', link: '/customer/cart' },
     { label: 'Orders', link: '/customer/my_orders' },
     { label: 'Wishlist', link: '/customer/wishlist' },
-    { label: 'Logout', action: () => this.logOut() }, // Agrega este elemento
+
   ];
 
   // Define el umbral para pantallas pequeñas
