@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import {DemoAngularMaterialModule} from "./DemoAngularMaterialModule";
 // @ts-ignore
-import { AppRoutingModule } from './app-routing.module';
 import {LoginComponent} from "./login/login.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {SignupComponent} from "./signup/signup.component";
@@ -15,25 +14,20 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignupComponent,
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     DemoAngularMaterialModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    provideHttpClient(),
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    AppComponent,
+    LoginComponent,
+    SignupComponent
 
   ],
-  bootstrap: [AppComponent],
   providers: [provideHttpClient()]
 })
 export class AppModule { }

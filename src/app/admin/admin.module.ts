@@ -11,16 +11,19 @@ import {PostCategoryComponent} from "./components/post-category/post-category.co
 
 @NgModule({
   declarations: [
-    AdminComponent,
-    DashboardComponent,
-    PostCategoryComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    DemoAngularMaterialModule,
+    DemoAngularMaterialModule,
+    PostCategoryComponent,
+    DashboardComponent,
+    AdminComponent
+  ],
+  providers: [
     provideHttpClient(),
-    DemoAngularMaterialModule
   ]
 })
 export class AdminModule { }
