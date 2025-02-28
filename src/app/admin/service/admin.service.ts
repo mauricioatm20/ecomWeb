@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {UserStorageService} from "../../service/storage/user-storage.service";
 
 
-const BASIC_URL = 'http://localhost:8080/';
+const BASIC_URL = 'http://34.247.92.13/';
 //const BASIC_URL = "https://glorious-gratitude-production.up.railway.app/";
 
 @Injectable({
